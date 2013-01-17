@@ -83,8 +83,6 @@ class Javascripter
 
         $js_code .= '<script type="text/javascript">'.PHP_EOL;
         $js_code .= '$(document).ready(function (){'.PHP_EOL;
-        $js_code .= ' $("[rel=popover]").popover();'.PHP_EOL;//remove me
-        $js_code .= ' $("[rel=tooltip]").tooltip();'.PHP_EOL;//remove me
 
         if (!empty(static::$injector)) {
             foreach (static::$injector as $snippet) {

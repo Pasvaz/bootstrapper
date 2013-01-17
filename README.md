@@ -60,7 +60,7 @@ Once you created a Modal you can launch it using a button or an anchor or get th
 {{ $modal->get_launch_button('Launch myModal via Button') }}
 
 //Using the get_launcher_attributes() method you'll print out the necessary attributes to launch the Modal
-<a {{$modal->get_launcher_attributes()}}>Open Modal</a>
+<a href="#" {{ HTML::attributes($modal->get_launcher_attributes()) }}>Open Modal</a>
 ```
 
 <a name='tooltip'></a>
