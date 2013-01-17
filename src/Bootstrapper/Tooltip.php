@@ -22,16 +22,14 @@ echo Bootstrapper\Tooltip::create(Form::text("test"), 'This is a test Tooltip')
  * Tooltip for creating Twitter Bootstrap Tooltip.
  *
  * @category   HTML/UI
- * @package    Boostrapper
- * @subpackage Twitter
+ * @package    Enhanced Laravel Twitter Bootstrap Bundle
  * @author     Pasquale Vazzana - <pasqualevazzana@gmail.com>
- * @author     Patrick Talmadge - <ptalmadge@gmail.com>
- * @author     Maxime Fabre - <ehtnam6@gmail.com>
  * @license    MIT License <http://www.opensource.org/licenses/mit>
- * @link       http://laravelbootstrapper.phpfogapp.com/
+ * @link       https://github.com/Pasvaz/bootstrapper
  *
- * @see        http://twitter.github.com/bootstrap/
+ * @see        https://github.com/Pasvaz/bootstrapper
  */
+
 class Tooltip
 {
     const ON_TOP = 'top';
