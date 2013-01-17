@@ -39,7 +39,13 @@ Asset::container('bootstrapper-unminified')
     ->add('jquery',               'js/jquery-1.8.3.js')
     ->add('bootstrap-js',         'js/bootstrap.js', 'jquery');
 
-// Define datepicker
+/**
+ * Define datepicker
+ *
+ * You don't need to manually add this to your pages
+ * When you use Datepicker.create it takes care of it
+ *
+ */
 Asset::container('bootstrapper-datepicker')
     ->bundle('bootstrapper')
     ->add('datepicker',           'css/datepicker.css')

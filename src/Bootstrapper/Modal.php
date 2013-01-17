@@ -118,7 +118,7 @@ class Modal
 	 */
 	public function with_header($header)
 	{
-		if (is_string($header) and strpos($header, '<')!=='0')
+			if (is_string($header) and strpos($header, '<')!=='0')
 			$header = '<H3>' . $header . '<H3>';
 		$this->headers = (array)$header;
 		return $this;
@@ -289,12 +289,13 @@ class Modal
 		$hasfooter = true;
 		$footerdiv = '<div class="modal-footer">';
 		if ($this->footers)
-			$footerdiv .= implode(PHP_EOL, $this->footers).'Suca';
+			$footerdiv .= implode(PHP_EOL, $this->footers);
 		else if ($this->autofooter)
 				$footerdiv .= '<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>';
 		else
 			$hasfooter = false;
 		$footerdiv .= '</div>';
+		
 		if ($hasfooter) $html .= $footerdiv;
 
 		// Close Modal containers
