@@ -102,10 +102,11 @@ class Datepicker
             $instance->attributes = $defaultAttributes;
         }
 
-        $loaded = array_key_exists('datepicker-js', \Asset::container('bootstrapper')->bundle('bootstrapper')->assets['script']);
+        $loaded = array_key_exists('script', \Asset::container('bootstrapper-dynamic')->bundle('bootstrapper')->assets)
+            and array_key_exists('datepicker-js', \Asset::container('bootstrapper-dynamic')->bundle('bootstrapper')->assets['script']);
         if (!$loaded)
         {
-            \Asset::container('bootstrapper')
+            \Asset::container('bootstrapper-dynamic')
             ->bundle('bootstrapper')
             ->add('datepicker',           'css/datepicker.css')
             ->add('datepicker-js',        'js/bootstrap-datepicker.js');
