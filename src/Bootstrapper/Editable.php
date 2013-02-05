@@ -41,6 +41,20 @@ class Editable
 			$editable_mode = $mode;
 
 		Javascripter::add_js_snippet('$.fn.editable.defaults.mode = "'.$editable_mode.'";');
+		static::load_assets();
+	}
+
+	private static function load_assets()
+	{
+		$loaded = array_key_exists('script', \Asset::container('bootstrapper-dynamic')->bundle('bootstrapper')->assets)
+			and array_key_exists('editable-js', \Asset::container('bootstrapper-dynamic')->bundle('bootstrapper')->assets['script']);
+		if (!$loaded)
+		{
+			\Asset::container('bootstrapper-dynamic')
+			->bundle('bootstrapper')
+			->add('bootstrap-editable',           'css/bootstrap-editable.css')
+			->add('bootstrap-editable-js',        'js/bootstrap-editable.js');
+		}
 	}
 
 	/**
@@ -70,14 +84,6 @@ class Editable
 		if ($opt) $opt = '{'.rtrim($opt, ',').'}';
 		Javascripter::add_js_snippet(sprintf('$("#%s").editable(%s);', $name, $opt));
 
-		$loaded = array_key_exists('script', \Asset::container('bootstrapper-dynamic')->bundle('bootstrapper')->assets)
-			and array_key_exists('editable-js', \Asset::container('bootstrapper-dynamic')->bundle('bootstrapper')->assets['script']);
-		if (!$loaded)
-		{
-			\Asset::container('bootstrapper-dynamic')
-			->bundle('bootstrapper')
-			->add('bootstrap-editable',           'css/bootstrap-editable.css')
-			->add('bootstrap-editable-js',        'js/bootstrap-editable.js');
-		}
+		static::load_assets();
 	}
 }
